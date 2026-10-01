@@ -1,0 +1,11 @@
+# machine-local overrides
+*.local
+.zshrc.local
+# editor/OS cruft
+.DS_Store
+*.swp
+*~
+# nvim plugin caches (if they sneak in)
+nvim/pack/
+nvim/plugin/packer_compiled.lua
+nvim/lazy-lock.json
