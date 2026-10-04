@@ -1,6 +1,6 @@
 -- Basic setup
 vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
+vim.g.maplocalleader = " "
 vim.opt.tabstop = 2        -- Size of a hard tab
 vim.opt.shiftwidth = 2     -- Size of auto-indent
 vim.opt.softtabstop = 2    -- Spaces when you press Tab
@@ -55,4 +55,9 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.clipboard = "unnamedplus"
 
-print("Neovim ready with VimTeX!")
+vim.opt.termguicolors = true
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.cursorline = true
+vim.opt.signcolumn = "yes"
+vim.opt.fillchars = { eob = " " } -- Hide ~ on empty lines

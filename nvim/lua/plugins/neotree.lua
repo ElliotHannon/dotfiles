@@ -1,23 +1,26 @@
 return {
-  {
-    "nvim-tree/nvim-tree.lua",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-      require("nvim-tree").setup({
-        sort_by = "case_sensitive",
-        view = {
-          width = 30,
-        },
-        renderer = {
-          group_empty = true,
-        },
-        filters = {
-          dotfiles = false,
-          custom = { "%.aux$", "%.log$", "%.out$", "%.toc$", "%.fls$", "%.fdb_latexmk$" },
-        },
-      })
-      
-      vim.keymap.set("n", "<leader>n", "<cmd>NvimTreeToggle<CR>")
-    end,
+  "nvim-neo-tree/neo-tree.nvim",
+  branch = "v3.x",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "nvim-tree/nvim-web-devicons",
+    "MunifTanjim/nui.nvim",
+  },
+  keys = {
+    { "<leader>n", "<cmd>Neotree toggle<cr>", desc = "Toggle File Explorer" },
+    { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "Toggle File Explorer" },
+  },
+  opts = {
+    popup_border_style = "rounded",
+    filesystem = {
+      filtered_items = {
+        visible = true,
+        hide_dotfiles = false,
+      },
+      follow_current_file = { enabled = true },
+    },
+    window = {
+      width = 30,
+    },
   },
 }
